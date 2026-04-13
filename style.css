@@ -1,0 +1,141 @@
+/* Kundalik.com Professional Dizayn */
+:root {
+    --kun-blue: #0054a6;
+    --kun-light-bg: #f0f2f5;
+    --kun-border: #d3d9de;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--kun-light-bg);
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #333;
+}
+
+/* Header - Yuqori qism */
+header {
+    background-color: var(--kun-blue);
+    color: white;
+    padding: 0 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo { font-size: 18px; font-weight: bold; }
+
+.logout-link {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 4px 12px;
+    border-radius: 3px;
+}
+
+/* Wrapper - Kontentni markazga olish */
+.wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+/* Sidebar - Chap panel */
+.sidebar {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--kun-border);
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    background: #e1e4e7;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.sidebar h3 { font-size: 14px; margin-bottom: 15px; color: #555; }
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.menu-list li {
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--kun-blue);
+    cursor: pointer;
+}
+
+.menu-list li:hover { text-decoration: underline; }
+
+/* Main - Markaziy qism */
+.main-content {
+    flex: 3;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--kun-border);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card-header {
+    background: #fcfcfc;
+    border-bottom: 1px solid var(--kun-border);
+    padding: 10px 15px;
+    font-weight: bold;
+    color: var(--kun-blue);
+    font-size: 15px;
+}
+
+.card-body { padding: 20px; }
+
+/* Formalar */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.btn-kun {
+    background-color: var(--kun-blue);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-kun:hover { background: #f12d0a; }
+
+/* Jadval */
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { border: 1px solid var(--kun-border); padding: 10px; text-align: left; font-size: 13px; }
+th { background: #f5f8fa; color: var(--kun-blue); }
+
+.hidden { display: none; }
