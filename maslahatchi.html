@@ -131,8 +131,8 @@
         <header><div class="logo">eMaktab Maslahatchi</div></header>
         <div class="login-container">
             <h2 style="color: var(--kun-blue);">Tizimga kirish</h2>
-            <input type="text" id="user" placeholder="Login (Maktab maslahatchi)">
-            <input type="password" id="pass" placeholder="Parol (iroda 2002)">
+            <input type="text" id="user" placeholder="Login (admin)">
+            <input type="password" id="pass" placeholder="Parol (123)">
             <button class="btn-kun" onclick="enter()">KIRISH</button>
         </div>
     </div>
@@ -209,7 +209,7 @@
             document.getElementById('loginPage').classList.add('hidden');
             document.getElementById('mainUI').classList.remove('hidden');
 
-            if(u === 'Maktab maslahatchi' && p === 'iroda 2002') {
+            if(u === 'admin' && p === '123') {
                 document.getElementById('roleTitle').innerText = "Maslahatchi (Admin)";
                 document.getElementById('userFields').classList.add('hidden');
                 document.getElementById('adminTableBox').classList.remove('hidden');
@@ -226,7 +226,8 @@
             // Hamma menyu tugmalaridan aktivlikni olib tashlash
             document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
 
-            // Tanlanganini ochish
+            // Tanlanganini ochish            git checkout main
+
             document.getElementById(tabId).classList.add('active');
             element.classList.add('active');
         }
