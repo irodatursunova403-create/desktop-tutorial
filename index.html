@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maktab Maslahatchisi | Kundalik Tizimi</title>
-    <!-- Brauzer tepasidagi rasmcha (Favicon) -->
+    
+    <!-- BRAUZER TEPASIDAGI RASMCHA (FAVICON) - PSIXOLOGIYA BELGISI -->
     <link rel="icon" type="image/png" href="https://flaticon.com">
     
     <style>
@@ -64,9 +65,9 @@
         }
 
         .sidebar ul { list-style:none; padding:0; font-size: 14px; line-height: 2.5; }
-        .sidebar li { cursor: pointer; color: var(--text-dark); border-bottom: 1px solid #eee; }
-        .sidebar li:hover { color: var(--kun-blue); padding-left: 5px; transition: 0.3s; }
-        .sidebar li.active { color: var(--kun-blue); font-weight: bold; }
+        .sidebar li { cursor: pointer; color: var(--text-dark); border-bottom: 1px solid #eee; padding: 5px; }
+        .sidebar li:hover { color: var(--kun-blue); padding-left: 10px; transition: 0.3s; background: var(--kun-light-blue); }
+        .sidebar li.active { color: var(--kun-blue); font-weight: bold; background: var(--kun-light-blue); }
 
         .main-content { flex: 3; }
 
@@ -137,7 +138,6 @@
         <header><div class="logo">eMaktab Maslahatchi</div></header>
         <div class="login-container">
             <h2 style="color: var(--kun-blue); margin-bottom: 20px;">Tizimga kirish</h2>
-            <!-- Tozalangan Login va Parol qismi -->
             <input type="text" id="user" placeholder="Login" autocomplete="off">
             <input type="password" id="pass" placeholder="Parol">
             <button class="btn-kun" onclick="enter()">KIRISH</button>
@@ -175,7 +175,6 @@
 
                 <div id="mashgulotTab" class="card">
                     <div class="card-header">Mashg'ulotlar jadvali</div>
-                    <p>Hozirgi vaqtda rejalashtirilgan mashg'ulotlar:</p>
                     <table>
                         <tr><th>Nomi</th><th>Vaqti</th><th>Holati</th></tr>
                         <tr><td>Muloqot madaniyati</td><td>14:00</td><td><span style="color:green">Aktiv</span></td></tr>
@@ -185,7 +184,6 @@
 
                 <div id="hisobotTab" class="card">
                     <div class="card-header">Shaxsiy hisobotlar</div>
-                    <p>Siz topshirgan testlar va natijalar bu yerda saqlanadi.</p>
                     <div style="background: var(--kun-light-blue); padding: 20px; border-radius: 4px; text-align: center; color: #666;">
                         Hozircha ma'lumotlar mavjud emas.
                     </div>
@@ -198,7 +196,6 @@
         function enter() {
             const user = document.getElementById('user').value;
             const pass = document.getElementById('pass').value;
-            // Login: Maktab maslahatchi | Parol: iroda 2002
             if(user === "Maktab maslahatchi" && pass === "iroda 2002") {
                 document.getElementById('loginPage').classList.add('hidden');
                 document.getElementById('mainUI').classList.remove('hidden');
@@ -219,13 +216,14 @@
             const name = document.getElementById('name').value;
             const msg = document.getElementById('msg').value;
             if(name && msg) {
-                alert("Xabaringiz muvaffaqiyatli yuborildi!");
+                alert("Xabaringiz yuborildi!");
                 document.getElementById('name').value = "";
                 document.getElementById('msg').value = "";
             } else {
-                alert("Iltimos, hamma maydonlarni to'ldiring!");
+                alert("Iltimos, maydonlarni to'ldiring!");
             }
         }
     </script>
 </body>
 </html>
+
