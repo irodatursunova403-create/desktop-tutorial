@@ -4,18 +4,16 @@
     <meta name="google-site-verification" content="GX57-JeJWdI3_seWmhplTciMDnVy3eztk548t-KCSTk" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google uchun kalit so'zlar -->
-<meta name="description" content="Maktab psixologi Iroda Tursunovaning rasmiy portali. O'quvchilar va ota-onalar uchun psixologik yordam va maslahatlar.">
-<meta name="keywords" content="Maktab psixologi Iroda, psixolog maslahati, maktab psixologi, Iroda Tursunova, o'quvchilar uchun psixologik yordam, ota-onalar uchun maslahatlar">
-<meta name="author" content="Iroda Tursunova">
-<link rel="icon" type="image/png" href="https://irodatursunova403-create.github.io/desktop-tutorial/">
-<link rel="icon" type="image/jpeg" href="photo_2026-04-13_14-21-53.jpg">
+    
+    <!-- Google SEO (Qidiruv tizimi uchun) -->
+    <meta name="description" content="Maktab psixologi Iroda Tursunovaning rasmiy portali. O'quvchilar va ota-onalar uchun psixologik yordam va maslahatlar.">
+    <meta name="keywords" content="Maktab psixologi Iroda, Iroda Tursunova, psixolog maslahati, maktab maslahatchisi, o'quvchilar uchun yordam">
+    <meta name="author" content="Iroda Tursunova">
 
+    <!-- BRAUZER TEPASIDAGI RASMCHA (FAVICON) -->
+    <link rel="icon" type="image/jpeg" href="photo_2026-04-13_14-21-53.jpg">
 
-<!-- Qidiruvda ko'rinadigan sarlavha -->
-<title>Maktab psixologi Iroda | Professional psixologik ko'mak</title>
-
-    <title>Maktab Maslahatchisi | Kundalik Tizimi</title>
+    <title>Maktab psixologi Iroda | Professional psixologik ko'mak</title>
     
     <style>
         :root {
@@ -26,7 +24,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
             background-color: #f0f2f5;
             margin: 0;
             color: var(--text-dark);
@@ -51,6 +49,7 @@
             gap: 20px;
         }
 
+        /* Chap panel (Sidebar) */
         .sidebar {
             flex: 1;
             background: white;
@@ -60,16 +59,23 @@
             height: fit-content;
         }
 
+        /* Profil rasmi dizayni */
         .profile-img {
             width: 100%;
-            height: 150px;
-            background: #ddd;
+            height: 180px;
+            background: #eee;
             border-radius: 4px;
             margin-bottom: 10px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Rasmni cho'zmasdan sig'diradi */
         }
 
         .sidebar ul { list-style:none; padding:0; font-size: 14px; line-height: 2.5; }
@@ -77,6 +83,7 @@
         .sidebar li:hover { color: var(--kun-blue); padding-left: 10px; transition: 0.3s; background: var(--kun-light-blue); }
         .sidebar li.active { color: var(--kun-blue); font-weight: bold; background: var(--kun-light-blue); }
 
+        /* Asosiy qism */
         .main-content { flex: 3; }
 
         .card {
@@ -152,7 +159,7 @@
         </div>
     </div>
 
-    <!-- 2. ASOSIY INTERFEYS -->
+    <!-- 2. ASOSIY INTERFEYS (DASHBOARD) -->
     <div id="mainUI" class="hidden">
         <header>
             <div class="logo">eMaktab | Maslahatchi Portali</div>
@@ -160,9 +167,14 @@
         </header>
 
         <div class="wrapper">
+            <!-- Sidebar -->
             <aside class="sidebar">
-                <div class="profile-img">👤</div>
-                <h3 id="roleTitle" style="margin: 5px 0; font-size: 16px; text-align: center;">Foydalanuvchi</h3>
+                <div class="profile-img">
+                    <!-- SIZNING RASMINGIZ SHU YERDA CHIQADI -->
+                    <img src="photo_2026-04-13_14-21-53.jpg" alt="Iroda Tursunova">
+                </div>
+                <h3 id="roleTitle" style="margin: 5px 0; font-size: 16px; text-align: center;">Iroda Tursunova</h3>
+                <p style="text-align: center; font-size: 12px; color: #666;">Maktab psixologi</p>
                 <hr>
                 <ul>
                     <li onclick="switchTab('homeTab', this)" class="active">🏠 Bosh sahifa</li>
@@ -171,30 +183,31 @@
                 </ul>
             </aside>
 
+            <!-- Kontent -->
             <main class="main-content">
+                <!-- Bosh sahifa -->
                 <div id="homeTab" class="card active">
                     <div class="card-header">Psixologga murojaat yo'llash</div>
-                    <div id="userFields">
-                        <input type="text" id="name" placeholder="Foydalanuvchi ismi">
-                        <textarea id="msg" rows="4" placeholder="Sizni nima bezovta qilyapti?"></textarea>
-                        <button class="btn-kun" onclick="saveMsg()" style="width: 150px;">Yuborish</button>
-                    </div>
+                    <p style="font-size: 14px; color: #555;">Hurmatli o'quvchilar va ota-onalar, savollaringizni bu yerda qoldirishingiz mumkin.</p>
+                    <input type="text" id="name" placeholder="Ismingiz">
+                    <textarea id="msg" rows="4" placeholder="Xabaringizni yozing..."></textarea>
+                    <button class="btn-kun" onclick="saveMsg()" style="width: 150px;">Yuborish</button>
                 </div>
 
+                <!-- Mashg'ulotlar -->
                 <div id="mashgulotTab" class="card">
                     <div class="card-header">Mashg'ulotlar jadvali</div>
                     <table>
-                        <tr><th>Nomi</th><th>Vaqti</th><th>Holati</th></tr>
-                        <tr><td>Muloqot madaniyati</td><td>14:00</td><td><span style="color:green">Aktiv</span></td></tr>
-                        <tr><td>Stressga chidamlilik</td><td>16:00</td><td><span style="color:orange">Kutilmoqda</span></td></tr>
+                        <tr><th>Mashg'ulot nomi</th><th>Vaqti</th><th>Xona</th></tr>
+                        <tr><td>Muloqot san'ati</td><td>14:30</td><td>Psixolog xonasi</td></tr>
+                        <tr><td>Imtihon hayajoni</td><td>16:00</td><td>Majlislar zali</td></tr>
                     </table>
                 </div>
 
+                <!-- Hisobotlar -->
                 <div id="hisobotTab" class="card">
-                    <div class="card-header">Shaxsiy hisobotlar</div>
-                    <div style="background: var(--kun-light-blue); padding: 20px; border-radius: 4px; text-align: center; color: #666;">
-                        Hozircha ma'lumotlar mavjud emas.
-                    </div>
+                    <div class="card-header">Hisobotlar va Natijalar</div>
+                    <p>Hozircha hisobotlar yuklanmagan.</p>
                 </div>
             </main>
         </div>
@@ -204,10 +217,10 @@
         function enter() {
             const user = document.getElementById('user').value;
             const pass = document.getElementById('pass').value;
+            // Sizning loginingiz va parolingiz
             if(user === "Maktab maslahatchi" && pass === "iroda 2002") {
                 document.getElementById('loginPage').classList.add('hidden');
                 document.getElementById('mainUI').classList.remove('hidden');
-                document.getElementById('roleTitle').innerText = user;
             } else {
                 alert("Xato login yoki parol!");
             }
@@ -224,13 +237,14 @@
             const name = document.getElementById('name').value;
             const msg = document.getElementById('msg').value;
             if(name && msg) {
-                alert("Xabaringiz yuborildi!");
+                alert("Xabaringiz muvaffaqiyatli yuborildi!");
                 document.getElementById('name').value = "";
                 document.getElementById('msg').value = "";
             } else {
-                alert("Iltimos, maydonlarni to'ldiring!");
+                alert("Iltimos, barcha maydonlarni to'ldiring!");
             }
         }
     </script>
 </body>
 </html>
+
