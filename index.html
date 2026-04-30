@@ -4,126 +4,87 @@
     <meta name="google-site-verification" content="GX57-JeJWdI3_seWmhplTciMDnVy3eztk548t-KCSTk" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google SEO -->
-    <meta name="description" content="Maktab psixologi Iroda Tursunovaning rasmiy portali.">
-    <meta name="keywords" content="Maktab psixologi Iroda, Iroda Tursunova, psixolog maslahati">
-    <meta name="author" content="Iroda Tursunova">
-
     <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <title>Maktab psixologi Iroda | Professional psixologik ko'mak</title>
+    <title>Maktab psixologi Iroda | Portali</title>
     
     <style>
-        :root {
-            --kun-blue: #0054a6;
-            --kun-light-bg: #f0f2f5;
-            --kun-border: #d3d9de;
-            --white: #ffffff;
-            --purple-main: #6a1b9a;
-        }
-
+        :root { --kun-blue: #0054a6; --kun-light-bg: #f0f2f5; --kun-border: #d3d9de; --white: #ffffff; --purple-main: #6a1b9a; }
         body { background-color: var(--kun-light-bg); margin: 0; font-family: sans-serif; color: #333; }
-        header { background-color: var(--kun-blue); color: white; padding: 0 50px; height: 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .logo-text { font-size: 18px; font-weight: bold; }
+        header { background-color: var(--kun-blue); color: white; padding: 0 50px; height: 50px; display: flex; justify-content: space-between; align-items: center; }
         .wrapper { display: flex; max-width: 1000px; margin: 20px auto; gap: 20px; padding: 0 15px; }
-
-        /* Sidebar */
-        .sidebar { flex: 1; background: var(--white); border: 1px solid var(--kun-border); border-radius: 4px; padding: 15px; text-align: center; height: fit-content; }
-        .profile-img-container { width: 130px; height: 130px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 3px solid var(--purple-main); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .sidebar { flex: 1; background: var(--white); border: 1px solid var(--kun-border); border-radius: 4px; padding: 15px; text-align: center; }
+        .profile-img-container { width: 130px; height: 130px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 3px solid var(--purple-main); }
         .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
-
         .menu-list { list-style: none; padding: 0; text-align: left; border-top: 1px solid #eee; margin-top: 10px; }
-        .menu-list li { padding: 12px 8px; font-size: 14px; cursor: pointer; border-bottom: 1px solid #f9f9f9; transition: 0.2s; }
-        .menu-list li:hover { color: var(--kun-blue); background: #f5f8fa; }
+        .menu-list li { padding: 12px 8px; font-size: 14px; cursor: pointer; border-bottom: 1px solid #f9f9f9; }
         .menu-list li.active { font-weight: bold; color: var(--kun-blue); background: #eef4f9; border-radius: 4px; }
-
-        /* Content */
         .main-content { flex: 3; }
         .card { background: var(--white); border: 1px solid var(--kun-border); border-radius: 4px; padding: 25px; display: none; }
         .card.active { display: block; }
         .card-header { border-bottom: 1px solid var(--kun-border); padding-bottom: 12px; margin-bottom: 20px; font-weight: bold; color: var(--kun-blue); font-size: 18px; }
-
         input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
         .btn-kun { background-color: var(--kun-blue); color: white; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; font-weight: bold; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid var(--kun-border); padding: 12px; text-align: left; font-size: 14px; }
-        th { background: #f5f8fa; color: var(--kun-blue); }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid var(--kun-border); padding: 12px; text-align: left; }
         .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <!-- LOGIN SAHIFASI -->
     <div id="loginPage">
-        <header><div class="logo-text">eMaktab Maslahatchi</div></header>
+        <header><div style="font-weight:bold; padding-left:20px;">eMaktab Maslahatchi</div></header>
         <div style="max-width: 350px; margin: 100px auto; background: white; padding: 40px; border: 1px solid var(--kun-border); border-radius: 8px; text-align: center;">
-            <h2 style="color: var(--kun-blue); margin-bottom: 30px;">Tizimga kirish</h2>
-            <input type="text" id="user" placeholder="Login">
-            <input type="password" id="pass" placeholder="Parol">
+            <h2 style="color: var(--kun-blue);">Tizimga kirish</h2>
+            <input type="text" placeholder="Login">
+            <input type="password" placeholder="Parol">
             <button class="btn-kun" style="width: 100%;" onclick="enter()">KIRISH</button>
         </div>
     </div>
 
-    <!-- ASOSIY INTERFEYS -->
     <div id="mainUI" class="hidden">
         <header>
-            <div class="logo-text">eMaktab | Maslahatchi Portali</div>
-            <button onclick="location.reload()" style="background:none; border:1px solid white; color:white; cursor:pointer; padding:5px 15px; border-radius:3px; font-size: 12px;">Chiqish</button>
+            <div style="font-weight:bold; padding-left:20px;">eMaktab | Portali</div>
+            <button onclick="location.reload()" style="background:none; border:1px solid white; color:white; cursor:pointer; padding:5px 15px; border-radius:3px;">Chiqish</button>
         </header>
 
         <div class="wrapper">
             <aside class="sidebar">
-                <div class="profile-img-container"><img src="logo.jpg" alt="Logo"></div>
+                <div class="profile-img-container"><img src="logo.jpg"></div>
                 <h3>Iroda Tursunova</h3>
                 <p style="font-size: 12px; color: #777;">Maktab psixologi</p>
                 <ul class="menu-list">
                     <li onclick="switchTab('homeTab', this)" class="active">🏠 Bosh sahifa</li>
                     <li onclick="switchTab('mashgulotTab', this)">📅 Mashg'ulotlar</li>
-                    <li onclick="switchTab('videoTab', this)">🎬 Videolar</li>
                     <li onclick="switchTab('hisobotTab', this)">📊 Hisobotlar</li>
                 </ul>
             </aside>
 
             <main class="main-content">
-                <!-- Bosh sahifa -->
                 <div id="homeTab" class="card active">
-                    <div class="card-header">Psixologga murojaat yo'llash</div>
-                    <p style="color: #666; margin-bottom: 20px;">Sizni nima bezovta qilyapti? Quyidagi shaklni to'ldiring.</p>
-                    <input type="text" placeholder="Ismingiz (ixtiyoriy)">
-                    <textarea rows="5" placeholder="Murojaat matnini yozing..."></textarea>
-                    <button class="btn-kun">Xabarni yuborish</button>
+                    <div class="card-header">Psixologga murojaat</div>
+                    <input type="text" placeholder="Ismingiz">
+                    <textarea rows="4" placeholder="Xabaringizni yozing..."></textarea>
+                    <button class="btn-kun">Yuborish</button>
                 </div>
 
-                <!-- Mashg'ulotlar -->
                 <div id="mashgulotTab" class="card">
                     <div class="card-header">Mashg'ulotlar jadvali</div>
                     <table>
-                        <thead><tr><th>Mavzu</th><th>Vaqt</th><th>Xona</th></tr></thead>
-                        <tbody>
-                            <tr><td>Muloqot ko'nikmalari</td><td>14:30</td><td>Psixolog xonasi</td></tr>
-                            <tr><td>Kasb tanlash sirlari</td><td>15:45</td><td>Majlislar zali</td></tr>
-                        </tbody>
+                        <tr><th>Mavzu</th><th>Vaqt</th></tr>
+                        <tr><td>Muloqot darsi</td><td>14:30</td></tr>
+                        <tr><td>Motivatsiya</td><td>15:45</td></tr>
                     </table>
                 </div>
 
-                <!-- Videolar (YANGI BO'LIM) -->
-                <div id="videoTab" class="card">
-                    <div class="card-header">Video darsliklar va maslahatlar</div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--kun-blue);">1. Imtihon hayajonini yengish</h4>
-                        <iframe width="100%" height="315" src="https://youtube.com" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kun-blue);">2. O'ziga bo'lgan ishonchni oshirish</h4>
-                        <iframe width="100%" height="315" src="https://youtube.com" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
-                    </div>
-                </div>
-
-                <!-- Hisobotlar -->
+                <!-- SHAXSIY HISOBOTLAR VEDIO QISMI -->
                 <div id="hisobotTab" class="card">
-                    <div class="card-header">Hisobotlar va natijalar</div>
-                    <p style="color: #888;">Hozircha hisobotlar yuklanmagan.</p>
+                    <div class="card-header">Shaxsiy hisobotlar va tahlillar</div>
+                    <p style="color: #666; margin-bottom: 20px;">Psixologik jarayonlar haqida video-hisobot:</p>
+                    <div style="margin-bottom: 20px;">
+                        <!-- YouTube-dan foydali video -->
+                        <iframe width="100%" height="315" src="https://youtube.com" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
+                    </div>
+                    <p style="font-size: 13px; color: #999;">Eslatma: Ushbu videolar ish faoliyati tahlili uchun mo'ljallangan.</p>
                 </div>
             </main>
         </div>
@@ -131,22 +92,15 @@
 
     <script>
         function enter() {
-            // Oddiy kirish logikasi
             document.getElementById('loginPage').classList.add('hidden');
             document.getElementById('mainUI').classList.remove('hidden');
         }
-
         function switchTab(tabId, el) {
-            // Hamma kartalarni yashirish
-            document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
-            // Hamma menyulardan active klassini olish
-            document.querySelectorAll('.menu-list li').forEach(li => li.classList.remove('active'));
-            
-            // Tanlangan kartani va menyuni ko'rsatish
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.menu-list li').forEach(l => l.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             el.classList.add('active');
         }
     </script>
 </body>
 </html>
-
