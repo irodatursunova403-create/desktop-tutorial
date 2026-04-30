@@ -5,177 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google SEO (Qidiruv uchun) -->
-    <meta name="description" content="Maktab psixologi Iroda Tursunovaning rasmiy portali. O'quvchilar va ota-onalar uchun psixologik yordam.">
-    <meta name="keywords" content="Maktab psixologi Iroda, Iroda Tursunova, psixolog maslahati, maktab maslahatchisi">
+    <!-- Google SEO -->
+    <meta name="description" content="Maktab psixologi Iroda Tursunovaning rasmiy portali.">
+    <meta name="keywords" content="Maktab psixologi Iroda, Iroda Tursunova, psixolog maslahati">
     <meta name="author" content="Iroda Tursunova">
 
-    <!-- BRAUZER TEPASIDAGI RASMCHA (FAVICON) - SIZ YUBORGAN LOGOTIP -->
     <link rel="icon" type="image/jpeg" href="logo.jpg">
-     <link rel="icon" type="image/jpeg" href="logo.jpg">
-
     <title>Maktab psixologi Iroda | Professional psixologik ko'mak</title>
     
     <style>
-        /* Kundalik.com Professional Dizayn */
         :root {
             --kun-blue: #0054a6;
             --kun-light-bg: #f0f2f5;
             --kun-border: #d3d9de;
             --white: #ffffff;
-            --purple-main: #6a1b9a; /* Logotip rangiga mos binafsharang */
+            --purple-main: #6a1b9a;
         }
 
-        body {
-            background-color: var(--kun-light-bg);
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            color: #333;
-        }
-
-        header {
-            background-color: var(--kun-blue);
-            color: white;
-            padding: 0 50px;
-            height: 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
+        body { background-color: var(--kun-light-bg); margin: 0; font-family: sans-serif; color: #333; }
+        header { background-color: var(--kun-blue); color: white; padding: 0 50px; height: 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .logo-text { font-size: 18px; font-weight: bold; }
+        .wrapper { display: flex; max-width: 1000px; margin: 20px auto; gap: 20px; padding: 0 15px; }
 
-        .wrapper {
-            display: flex;
-            max-width: 1000px;
-            margin: 20px auto;
-            gap: 20px;
-            padding: 0 15px;
-        }
+        /* Sidebar */
+        .sidebar { flex: 1; background: var(--white); border: 1px solid var(--kun-border); border-radius: 4px; padding: 15px; text-align: center; height: fit-content; }
+        .profile-img-container { width: 130px; height: 130px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 3px solid var(--purple-main); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Sidebar - Chap panel */
-        .sidebar {
-            flex: 1;
-            background: var(--white);
-            border: 1px solid var(--kun-border);
-            border-radius: 4px;
-            padding: 15px;
-            text-align: center;
-            height: fit-content;
-        }
-
-        /* LOGOTIP UCHUN DUMALOQ DIZAYN */
-        .profile-img-container {
-            width: 140px;
-            height: 140px;
-            background: #fff;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid var(--purple-main);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .sidebar h3 { font-size: 16px; margin: 10px 0 5px; color: var(--kun-blue); }
-        .sidebar p { font-size: 12px; color: #777; margin-bottom: 20px; }
-
-        .menu-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-        }
-
-        .menu-list li {
-            padding: 12px 8px;
-            font-size: 14px;
-            color: var(--text-dark);
-            cursor: pointer;
-            border-bottom: 1px solid #f9f9f9;
-            transition: 0.2s;
-        }
-
-        .menu-list li:hover { color: var(--kun-blue); background: #f5f8fa; padding-left: 15px; }
+        .menu-list { list-style: none; padding: 0; text-align: left; border-top: 1px solid #eee; margin-top: 10px; }
+        .menu-list li { padding: 12px 8px; font-size: 14px; cursor: pointer; border-bottom: 1px solid #f9f9f9; transition: 0.2s; }
+        .menu-list li:hover { color: var(--kun-blue); background: #f5f8fa; }
         .menu-list li.active { font-weight: bold; color: var(--kun-blue); background: #eef4f9; border-radius: 4px; }
 
-        /* Asosiy kontent */
+        /* Content */
         .main-content { flex: 3; }
-
-        .card {
-            background: var(--white);
-            border: 1px solid var(--kun-border);
-            border-radius: 4px;
-            margin-bottom: 15px;
-            padding: 25px;
-            display: none;
-        }
-
+        .card { background: var(--white); border: 1px solid var(--kun-border); border-radius: 4px; padding: 25px; display: none; }
         .card.active { display: block; }
+        .card-header { border-bottom: 1px solid var(--kun-border); padding-bottom: 12px; margin-bottom: 20px; font-weight: bold; color: var(--kun-blue); font-size: 18px; }
 
-        .card-header {
-            border-bottom: 1px solid var(--kun-border);
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: var(--kun-blue);
-            font-size: 18px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-
-        .btn-kun {
-            background-color: var(--kun-blue);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-kun:hover { background: #f12d0a; transform: translateY(-1px); }
-
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .btn-kun { background-color: var(--kun-blue); color: white; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid var(--kun-border); padding: 12px; text-align: left; font-size: 14px; }
         th { background: #f5f8fa; color: var(--kun-blue); }
-
         .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <!-- 1. LOGIN SAHIFASI -->
+    <!-- LOGIN SAHIFASI -->
     <div id="loginPage">
         <header><div class="logo-text">eMaktab Maslahatchi</div></header>
-        <div style="max-width: 350px; margin: 100px auto; background: white; padding: 40px; border: 1px solid var(--kun-border); border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <div style="max-width: 350px; margin: 100px auto; background: white; padding: 40px; border: 1px solid var(--kun-border); border-radius: 8px; text-align: center;">
             <h2 style="color: var(--kun-blue); margin-bottom: 30px;">Tizimga kirish</h2>
-            <input type="text" id="user" placeholder="Login" autocomplete="off">
+            <input type="text" id="user" placeholder="Login">
             <input type="password" id="pass" placeholder="Parol">
             <button class="btn-kun" style="width: 100%;" onclick="enter()">KIRISH</button>
         </div>
     </div>
 
-    <!-- 2. ASOSIY INTERFEYS -->
+    <!-- ASOSIY INTERFEYS -->
     <div id="mainUI" class="hidden">
         <header>
             <div class="logo-text">eMaktab | Maslahatchi Portali</div>
@@ -183,91 +73,80 @@
         </header>
 
         <div class="wrapper">
-            <!-- Sidebar -->
             <aside class="sidebar">
-                <div class="profile-img-container">
-                    <!-- BINAFSHARANG LOGOTIP -->
-                    <img src="logo.jpg" alt="Maktab Maslahatchisi Logo">
-                </div>
+                <div class="profile-img-container"><img src="logo.jpg" alt="Logo"></div>
                 <h3>Iroda Tursunova</h3>
-                <p>Maktab psixologi</p>
+                <p style="font-size: 12px; color: #777;">Maktab psixologi</p>
                 <ul class="menu-list">
                     <li onclick="switchTab('homeTab', this)" class="active">🏠 Bosh sahifa</li>
                     <li onclick="switchTab('mashgulotTab', this)">📅 Mashg'ulotlar</li>
+                    <li onclick="switchTab('videoTab', this)">🎬 Videolar</li>
                     <li onclick="switchTab('hisobotTab', this)">📊 Hisobotlar</li>
                 </ul>
             </aside>
 
-            <!-- Main Content -->
             <main class="main-content">
-                <!-- Bosh sahifa bo'limi -->
+                <!-- Bosh sahifa -->
                 <div id="homeTab" class="card active">
                     <div class="card-header">Psixologga murojaat yo'llash</div>
-                    <p style="color: #666; margin-bottom: 20px;">Sizni nima bezovta qilyapti? Quyidagi shaklni to'ldirib, o'z xabaringizni yuborishingiz mumkin.</p>
-                    <input type="text" id="name" placeholder="Ismingiz (ixtiyoriy)">
-                    <textarea id="msg" rows="5" placeholder="Murojaat matnini yozing..."></textarea>
-                    <button class="btn-kun" onclick="saveMsg()">Xabarni yuborish</button>
+                    <p style="color: #666; margin-bottom: 20px;">Sizni nima bezovta qilyapti? Quyidagi shaklni to'ldiring.</p>
+                    <input type="text" placeholder="Ismingiz (ixtiyoriy)">
+                    <textarea rows="5" placeholder="Murojaat matnini yozing..."></textarea>
+                    <button class="btn-kun">Xabarni yuborish</button>
                 </div>
 
-                <!-- Mashg'ulotlar bo'limi -->
+                <!-- Mashg'ulotlar -->
                 <div id="mashgulotTab" class="card">
                     <div class="card-header">Mashg'ulotlar jadvali</div>
                     <table>
-                        <thead>
-                            <tr><th>Mavzu</th><th>Vaqt</th><th>Xona</th></tr>
-                        </thead>
+                        <thead><tr><th>Mavzu</th><th>Vaqt</th><th>Xona</th></tr></thead>
                         <tbody>
                             <tr><td>Muloqot ko'nikmalari</td><td>14:30</td><td>Psixolog xonasi</td></tr>
-                            <tr><td>Kasb tanlash sirlari</td><td>16:00</td><td>Majlislar zali</td></tr>
+                            <tr><td>Kasb tanlash sirlari</td><td>15:45</td><td>Majlislar zali</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Hisobotlar bo'limi -->
-                <div id="hisobotTab" class="card">
-                    <div class="card-header">Shaxsiy hisobotlar</div>
-                    <div style="background: #fcfcfc; padding: 40px; text-align: center; color: #999; border: 1px dashed #ddd; border-radius: 4px;">
-                        Hozircha natijalar mavjud emas.
+                <!-- Videolar (YANGI BO'LIM) -->
+                <div id="videoTab" class="card">
+                    <div class="card-header">Video darsliklar va maslahatlar</div>
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--kun-blue);">1. Imtihon hayajonini yengish</h4>
+                        <iframe width="100%" height="315" src="https://youtube.com" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
                     </div>
+                    <div>
+                        <h4 style="color: var(--kun-blue);">2. O'ziga bo'lgan ishonchni oshirish</h4>
+                        <iframe width="100%" height="315" src="https://youtube.com" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Hisobotlar -->
+                <div id="hisobotTab" class="card">
+                    <div class="card-header">Hisobotlar va natijalar</div>
+                    <p style="color: #888;">Hozircha hisobotlar yuklanmagan.</p>
                 </div>
             </main>
         </div>
     </div>
 
     <script>
-        // KIRISH FUNKSIYASI
         function enter() {
-            const user = document.getElementById('user').value;
-            const pass = document.getElementById('pass').value;
-            // LOGIN: Maktab maslahatchi | PAROL: iroda 2002
-            if(user === "Maktab maslahatchi" && pass === "iroda 2002") {
-                document.getElementById('loginPage').classList.add('hidden');
-                document.getElementById('mainUI').classList.remove('hidden');
-            } else {
-                alert("Xato login yoki parol!");
-            }
+            // Oddiy kirish logikasi
+            document.getElementById('loginPage').classList.add('hidden');
+            document.getElementById('mainUI').classList.remove('hidden');
         }
 
-        // BO'LIMLARNI ALMASHTIRISH
         function switchTab(tabId, el) {
-            document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
+            // Hamma kartalarni yashirish
+            document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+            // Hamma menyulardan active klassini olish
             document.querySelectorAll('.menu-list li').forEach(li => li.classList.remove('active'));
+            
+            // Tanlangan kartani va menyuni ko'rsatish
+            document.getElementById(tabId).classList.add('active');
             el.classList.add('active');
-        }
-
-        // XABARNI SAQLASH
-        function saveMsg() {
-            const name = document.getElementById('name').value;
-            const msg = document.getElementById('msg').value;
-            if(msg) {
-                alert("Xabaringiz yuborildi! Maktab psixologi tez orada ko'rib chiqadi.");
-                document.getElementById('name').value = "";
-                document.getElementById('msg').value = "";
-            } else {
-                alert("Iltimos, xabar matnini kiriting.");
-            }
         }
     </script>
 </body>
 </html>
+
